@@ -4,10 +4,13 @@ jobs:
   execute:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
+        run: |
+          ls
       - name: execute py script # run the run.py to get the latest data
         run: |
           python script.py
